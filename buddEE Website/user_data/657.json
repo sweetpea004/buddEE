@@ -1,0 +1,38 @@
+{
+    "pets": [
+        {
+            "id": 1,
+            "name": "Sog",
+            "personality": "Bubbly",
+            "time": 30,
+            "points": 0.0,
+            "relationship": "Acquainted",
+            "species": "turtle",
+            "emotion": "sad",
+            "birthday": "2022-05-18"
+        },
+        {
+            "id": 2,
+            "name": "Zelda",
+            "personality": "Bold",
+            "time": 30,
+            "points": 0.0,
+            "relationship": "Acquainted",
+            "species": "cat",
+            "emotion": "shy",
+            "birthday": "2024-03-19"
+        }
+    ],
+    "activities": [
+        {
+            "id": 279,
+            "date": "2024-03-19",
+            "time": 30,
+            "activity": "running",
+            "pets_taken": [
+                "Sog",
+                "Zelda"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+     <article class="span-columns center">
+        <img src="/static/images/home_page.png" width="80%">
+        <p class="center">Welcome! would you like to have a buddEE to exercise with you? If so, please sign up below!</p>
+        <a href="/signup" class="link">Create an account!</a>
+    </article>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Activty{% endblock %}
+
+{% block content %}
+    <article class="center span-columns">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+
+        <h1>Overall Time:</h1>
+        <p><span class="bold">Hours:</span> {{ hours }}</p>
+        <p><span class="bold">Minutes:</span> {{ minutes }}</p>
+
+        <a href="/addactivity" class="purple-button">Add Activity</a>
+    </article>
+
+    {% if activities %}
+        <table class="span-columns">
+            <thead>
+                <tr>
+                    <th class="center">Date</th>
+                    <th class="center">Activity</th>
+                    <th class="center">Time</th>
+                    <th class="center">Edit</th>
+                    <th class="center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for activity in activities|reverse %}
+                <tr>
+                    <td class="center">{{ activity.date }}</td>
+                    <td class="center"><img class="image-background icon-resize" src="/static/images/{{activity.activity}}.png"></td>
+                    <td class="center">{{ activity.time }} minutes</td>
+                    <td class="center"><a href="/editactivity?id={{ activity.id }}"><img class="icon-resize" src="/static/images/editing.png"></a></td> 
+                    <td class="center"><a href="/deleteactivity?id={{ activity.id }}"><img class="icon-resize" src="/static/images/bin.png"></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    {% endif %}
+
+{% endblock %}

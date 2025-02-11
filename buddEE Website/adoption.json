@@ -1,0 +1,23 @@
+[
+    {
+        "id": 891,
+        "name": "Jinx",
+        "personality": "Feisty",
+        "species": "bunny",
+        "birthday": "2022-04-25"
+    },
+    {
+        "id": 315,
+        "name": "Chewy",
+        "personality": "Aloof",
+        "species": "dog",
+        "birthday": "2022-04-25"
+    },
+    {
+        "id": 775,
+        "name": "Tweetypie",
+        "personality": "Sweet",
+        "species": "bird",
+        "birthday": "2022-06-11"
+    }
+]

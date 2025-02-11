@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Confirm Adoption{% endblock %}
+
+{% block content %}
+
+<form method="post" action="/confirmadopt" class="span-columns center">
+    <input type="hidden" name="id" value="{{ buddEE.id }}">
+    
+    <p class="center">You are about to adopt {{ buddEE.name }}, are you sure you want to adopt this BuddEE?</p>
+    <img src="/static/{{buddEE.species}}/{{buddEE.species}}_happy.png">
+    <p class="center">This action cannot be undone, a pet is with you for life!</p>
+
+    <td><a href="/adoption" class="green-button bold">Cancel</a></td> 
+    <button type="submit" class="purple-button bold">Confirm Adoption</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+[
+    {
+        "username": "sweetpea",
+        "id": 460,
+        "password": "pbkdf2:sha256:260000$94btUs3lvgvF7c6Z$0f58bf0461dbd7db97deb2a9cbae54bb52cf55706dee514ffd099abdad1499d6"
+    },
+    {
+        "username": "fluffybluey",
+        "id": 388,
+        "password": "pbkdf2:sha256:260000$YhZMrCNoMrU3RBis$45dfdca6413f10cf5309a0a02ed8158ea6a30034fac2f2186e12d369612cc4c2"
+    },
+    {
+        "username": "sample",
+        "id": 564,
+        "password": "pbkdf2:sha256:260000$NqXRcRIIpqJuqLQZ$179377eb42f0954e3479fbf8c1e72649f9ab0c25d50a8c7324ab0ece74d0ca35"
+    },
+    {
+        "username": "MichaelBingBong",
+        "id": 657,
+        "password": "pbkdf2:sha256:260000$7TfD5mSBpcazE6Un$81debf3471e38ee276188b1df6f6e41aa5448504868976a838afc9bad82730bf"
+    }
+]

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if num_pets == 0 %}
+        <article class="span-columns center">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <p class="center">You currently have no buddEE's to play with, create one below or adopt!</p><br>
+            <a href="/create" class="purple-button">Create first buddEE</a><br>
+            <img class="fill-space-img margin-top-bottom" width="35%" src="/static/images/dashboard.png">
+        </article>
+
+    {% else %}
+        <artcile class="span-columns">
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <h1>Your BuddEE's:</h1>
+
+            {% for pet in pets %}
+                <a href="/dashboard?id={{ pet['id'] }}" class="pulsate purple-button {{ 'active' if pet['id'] == target_pet['id'] }}"> <img src="/static/images/{{ pet['species'] }}.png" alt="{{ pet['species'] }}" class="icon-resize"> {{ pet['name'] }}</a>
+                {% if num_pets == 1 %}
+                    <a href="/create" class="purple-button">Create buddEE</a>
+                {% endif %}
+            {% endfor %}
+
+        </artcile>
+
+        {% if target_pet != -1 %}
+            <section class="pet-display span-columns">
+                <artcile class="center margin-top-bottom">      
+                    <img src="/static/{{target_pet['species']}}/{{target_pet['species']}}_{{target_pet['emotion']}}.png">
+
+                    {% if target_pet['emotion'] == "shy" %}
+                        <p class="center margin-left bold">{{ target_pet['name'] }} is feeling shy and needs a little bit of time to get to know you.</p>
+                    {% elif target_pet['emotion'] == "neutral" %}
+                        <p class="center margin-left bold">{{ target_pet['name'] }} is feeling neutral but wants some love and attention!</p>
+                    {% elif target_pet['emotion'] == "sad" %}
+                        <p class="center margin-left bold">{{ target_pet['name'] }} seems a little down...</p>
+                    {% elif target_pet['emotion'] == "happy" %}
+                        <p class="center margin-left bold">{{ target_pet['name'] }} is so happy to see you!</p>
+                    {% endif %}
+
+                    <p class="center margin-left"><a class="link" href="/addactivity">Add an activity</a> to improve your BuddEE's emotion and increase your friendship!</p>
+                
+                    <!-- progress bar -->
+                        <small class="center">Acquainted<meter value="{{ target_pet['points'] }}"></meter>Best Friends</small>
+                </artcile>
+                
+                <aside>
+                    <h1>{{ target_pet['name'] }}</h1>
+                    <div class="margin-left">
+                        <p><span class="bold">Birthday: </span>{{ target_pet['birthday'] }}</p>
+                        <p><span class="bold">Relationship level: </span>{{ target_pet['relationship'] }}</p>
+                        <p><span class="bold">Personality: </span>{{ target_pet['personality'] }}</p>
+                        <p><span class="bold">Overall Time: </span></p>
+                        <div class="margin-left">
+                            <p>Hours: {{ target_pet['time'] // 60 }}</p>
+                            <p>Minutes: {{ target_pet['time'] % 60 }}</p>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+        {% else %}
+            <section class="span-columns center">
+                <p>Click on one of your BuddEE's to view it!</p>
+                <img class="fill-space-img" width="35%" src="/static/images/dashboard.png">
+            </section>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

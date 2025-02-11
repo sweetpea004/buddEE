@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Help{% endblock %}
+{% block javascript %}<script src="/static/script/help.js" defer></script>{% endblock %}
+
+{% block content %}
+    <article class="help-article">
+        <h1>Help:</h1>
+        <p>This page is for anyone who needs to learn the ins-and-outs of BuddEE before or during their pet-full experience.</p><br>
+
+        <p class="bold">CREATING AN ACCOUNT AND LOGGING IN:</p>
+        <p>From the home page, you should see a "create account" link at the bottom of the page or a "Login" and "Sign up" button at the top left of the screen. From there, you may create an account if you do not already have one or log in to an existing account.<br><br>
+            To create an account, you must enter a unique username and create - and confirm - a password for your account. Once you have finsihed creating your account, you will be taken to the log in page for you to log in.<br>
+            <button id="open-signup-login" class="img-open-button">Open Image</button> <button id="close-signup-login" class="img-open-button hidden">Close Image</button><br>
+            <img id="img-signup-login" class="help-img hidden" src="/static/images/help-signup-login.PNG">
+        </p><br><br>
+
+        <p class="bold">CREATING A BUDDEE:</p>
+        <p>Any and all of our users are <span class="bold">limited to 2 pets only</span>. This includes any combination of user-created pets and adopted pets.<br><br>
+            When you log in, you should see a "CREATE BUDDEE" option at the top of your screen, or if you're a new user a "CREATE BUDDEE" button on your Dashboard. Once you reach the create BuddEE page, you are free to select the species of your pet and come up with their name.
+            Note that your pet's personality will be random; and that your pet's name, species and personality cannot be changed.<br>
+            <button id="open-create" class="img-open-button">Open Image</button> <button id="close-create" class="img-open-button hidden">Close Image</button><br>
+            <img id="img-create" class="help-img hidden" src="/static/images/help-create-pet.PNG"><br>
+
+            You can view your BuddEE by clicking on its icon on the dashboard. Clicking this will bring up infomration about you BuddEE such as birthday and personality; as well as its relationship with you and its current emotion. By consistently completing and logging activities, your friendship level with your pet will grow, and their emotion improved.
+            Your BuddEE's emotion and your relationship with them might deteriorate if you have not logged an activity in a while, so be consistent.<br>
+            <button id="open-dashboard" class="img-open-button">Open Image</button> <button id="close-dashboard" class="img-open-button hidden">Close Image</button><br>
+            <img id="img-dashboard" class="help-img hidden" src="/static/images/help-dashboard.PNG">
+        </p><br><br>
+
+        <p class="bold">LOGGING ACTIVITIES:</p>
+        <p>On your activities page, you can look through all the previous activities you have logged which you can edit or delete. Adding activities will inrease the admiration points you have with your pet and increase your friendship level with them.<br><br>
+            It is recommended you complete and log activities consistently throughout the week to keep your pet happy! after a few days of no activities, your BuddEE might start to seem less and less happy.<br><br>
+
+            If you decide to add an activity by clicking on the "ADD ACTIVITY" button, you can enter all the information about the activity including the date, the amount of time and the type of activity.
+            The type of activity does not have to directly match the kind of activity you took part in to count! for instance, gardening can be considered an "Outside Activity"<br>
+            <button id="open-add-act" class="img-open-button">Open Image</button> <button id="close-add-act" class="img-open-button hidden">Close Image</button><br>
+            <img id="img-add-act" class="help-img hidden" src="/static/images/help-add-activity.PNG"><br>
+
+            From the Activity page, you are free to edit activities if a mistake was made or even delete them from your log. Deleting activities removes equivelant points away from your BuddEE which means it no longer has any effect.<br>
+            <button id="open-edit-delete-act" class="img-open-button">Open Image</button> <button id="close-edit-delete-act" class="img-open-button hidden">Close Image</button><br>
+            <img id="img-edit-delete-act" class="help-img hidden" src="/static/images/help-edit-delete-activity.PNG">
+
+        </p><br><br>
+
+        <p class="bold">ADOPTING A BUDDEE:</p>
+        <p>If you wish to adopt a pet, you may chose to scroll through the many pets put up for adoption by other users. If you find a pet that you like click on the "Adopt Me" button next to their information and confirm to adopt.<br>
+            <button id="open-adopt" class="img-open-button">Open Image</button> <button id="close-adopt" class="img-open-button hidden">Close Image</button><br>
+            <img id="img-adopt" class="help-img hidden" src="/static/images/help-adoption.PNG"><br>
+
+            <span class="bold">How do I put my pet up for adoption?</span> Users cannot chose to put their pet up for adoption anytime they wish. Pets are put up for adoption when a user choses to delete their account. All pets currently up for adoption are pets previous users have owned.
+        </p><br><br>
+
+        <p class="bold">EDITTING ACCOUNT DETAILS:</p>
+        <p>If you would like to change any details regarding your account, click the green button on the top right-hand-side on the window. On this page, you can change your username or your password by typing in either in its respective field and clicking the save button.<br>
+            Keep in mind, usernames must be unique to other users on BuddEE.<br><br>
+
+            You can also delete your account from this page if you wish. This is permanent and will result in your data being deleted and you BuddEE's being put up for adoption.<br>
+            <button id="open-account" class="img-open-button">Open Image</button> <button id="close-account" class="img-open-button hidden">Close Image</button><br>
+            <img id="img-account" class="help-img hidden" src="/static/images/help-account.PNG"><br><br>
+
+            Usernames are not used for any other purpose otherthan giving us a name to call you and are not shared with other BuddEE users.<br><br>
+            <span class="bold">Why must my Username be unique if no one sees it?</span> this ensures that an email is not required to sign up for an account, reducing privacy risks and ensuring people of all ages can use BuddEE.<br><br>
+        </p><br><br>
+
+    </article>
+
+    <aside class="center">
+        <p class="bold">TUTORIAL VIDEO:</p>
+        <p>step by step turtorial on how to use BuddEE</p>
+
+        <!-- replace video link with my own when it is made -->
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1MPbp8iqWl0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <br><br>
+
+        <img src="/static/images/help_page.png", width="100%">
+    </aside>
+{% endblock %}

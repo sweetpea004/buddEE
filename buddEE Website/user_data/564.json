@@ -1,0 +1,134 @@
+{
+    "pets": [
+        {
+            "id": 1,
+            "name": "meow",
+            "personality": "Affectionate",
+            "time": 1965,
+            "points": 0.32,
+            "relationship": "Friends",
+            "species": "cat",
+            "emotion": "neutral",
+            "birthday": "2022-06-12"
+        }
+    ],
+    "activities": [
+        {
+            "id": 93,
+            "date": "2022-08-05",
+            "time": 60,
+            "activity": "athletics",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 85,
+            "date": "2022-08-07",
+            "time": 150,
+            "activity": "horse-riding",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 852,
+            "date": "2022-08-08",
+            "time": 180,
+            "activity": "outside",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 709,
+            "date": "2022-08-09",
+            "time": 105,
+            "activity": "swimming",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 167,
+            "date": "2022-08-11",
+            "time": 120,
+            "activity": "sports",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 135,
+            "date": "2022-07-13",
+            "time": 300,
+            "activity": "boating",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 990,
+            "date": "2022-07-15",
+            "time": 420,
+            "activity": "ski",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 567,
+            "date": "2022-08-16",
+            "time": 120,
+            "activity": "biking",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 949,
+            "date": "2022-08-17",
+            "time": 60,
+            "activity": "running",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 178,
+            "date": "2022-08-18",
+            "time": 60,
+            "activity": "running",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 817,
+            "date": "2022-08-19",
+            "time": 120,
+            "activity": "horse-riding",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 879,
+            "date": "2022-08-20",
+            "time": 120,
+            "activity": "swimming",
+            "pets_taken": [
+                "meow"
+            ]
+        },
+        {
+            "id": 646,
+            "date": "2022-08-21",
+            "time": 150,
+            "activity": "outside",
+            "pets_taken": [
+                "meow"
+            ]
+        }
+    ]
+}

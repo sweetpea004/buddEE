@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Account{% endblock %}
+
+{% block content %}
+    <article>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <h1>{{ user.username }}</h1>
+
+        <p>Change your user detals:</p>
+
+        <form action="/editusername" method="POST">
+            <label for="username">Change Username: </label>
+            <input type="text" name="username" id="username" value="{{ user.username }}">
+
+            <button type="submit" class="purple-button">Save</button>
+            
+        </form>
+
+        <form action="/editpassword" method="POST">
+            <label for="password">Change Password: </label>
+            <input type="password" name="password" id="password">
+
+            <button type="submit" class="purple-button">Save</button>
+        </form>
+
+        <a href="/deleteaccount?username={{  user.username }}" class="green-button bold margin-top-bottom">Delete Account</a>
+    </article>
+    
+    <aside>
+        <img src="/static/images/account_page.png", width="100%">
+    </aside>
+
+{% endblock %}

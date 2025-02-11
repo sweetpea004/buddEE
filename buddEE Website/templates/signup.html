@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Create an account{% endblock %}
+{% block javascript %}<script src="/static/script/signup.js" defer></script>{% endblock %}
+
+{% block content %}
+
+    <article>
+        
+        <h1>Sign up: </h1>
+        <p>Create an account by entering your desired username and password.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/signup" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username" value="{% if test %}{{ test['username'] }}{% endif %}" placeholder="eg. Buttons01" required><br>
+            <!-- error message -->
+            <small class="hidden error" id="username-error-text">A Username is required.</small><br>
+
+            <label for="create-password">Password: </label>
+            <input type="password" name="create-password" id="create-password" placeholder="eg. buddies123" required><br>
+            <!-- error message: empty -->
+            <small class="hidden error" id="password-empty-error-text">A Password is required.</small><br>
+
+            <label for="password-confirm">Confirm Password: </label>
+            <input type="password" name="password-confirm" id="password-confirm" placeholder="eg. buddies123" required><br>
+            <!-- error message: matching passwords -->
+            <small class="hidden error" id="password-error-text">Passwords do not match.</small><br>
+            <!-- error message: empty -->
+            <small class="hidden error" id="confirm-password-empty-error-text">A Password is required.</small><br>
+
+            <button type="submit" id="submit" class="button purple-button">Create account</button>
+            
+        </form>
+    </article>
+
+    <aside>
+        <img src="/static/images/sign_up.png", width="100%">
+    </aside>
+
+{% endblock %}

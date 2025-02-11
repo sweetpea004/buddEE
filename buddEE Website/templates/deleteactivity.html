@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Delete Activity{% endblock %}
+
+{% block content %}
+
+<form method="post" action="/deleteactivity" class="center span-columns">
+    <p class="center">You are about to permanently delete activity: <span class="bold">{{ activity.activity }} {{ activity.date }}.</span></p>
+    <p class="center">This action cannot be undone.</p>
+    <input type="hidden" name="id" value="{{ activity.id }}">
+    <a href="/activity" class="purple-button">Cancel</a>
+    <button type="submit" class="green-button bold">Confirm delete</button><br>
+    <img class="fill-space-img" width="35%" src="/static/images/add_activity.png">
+</form>
+
+{% endblock %}

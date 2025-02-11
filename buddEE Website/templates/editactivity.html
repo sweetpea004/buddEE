@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Edit Activity{% endblock %}
+{% block javascript %}<script src="/static/script/activity.js" defer></script>{% endblock %}
+
+{% block content %}
+
+    <article>
+        <h1>Edit Activity:</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/editactivity" method="POST">
+            <!-- for the process of editing the activity - not for user -->
+            <input type="hidden" name="id" value="{{ activity.id }}">
+
+            <label for="date">Date:</label>
+            <!-- error message -->
+            <input type="date" name="date" id="date" required value="{{ activity.date }}"><br>
+            <small class="hidden error" id="date-error-text">Please enter a date.</small>
+
+            <p>Time:</p>
+            <div>
+                <label class="margin-left" for="hours">Hours:</label>
+                <input type="number" name="hours" id="hours" min="0" required value="{{ activity.time // 60 }}">
+                <label class="margin-left" for="minutes">Minutes:</label>
+                <input type="number" name="minutes" id="minutes" min="0" max="59" required value="{{ activity.time % 60 }}">
+            </div>
+            <!-- error messages -->
+            <small class="hidden error" id="time-zero-error-text">Cannot submit an activity with zero hours and minutes.</small><br>
+            <small class="hidden error" id="time-error-text">Please enter a time period for both slots - enter zero if not appliable.</small><br>
+
+            <p>Type of Activity:</p>
+            <!-- error message -->
+            <small class="hidden error" id="activity-error-text">Please pick a relevant activity.</small>
+            <div id="choose-activity">
+                <label class="img-radio">
+                    <input type="radio" id="biking" name="activity" value="biking" {{ 'checked' if activity.activity == 'biking' }}>
+                    <img class="icon-resize" src="/static/images/biking.png" alt="biking">
+                    Riding
+                </label>
+                
+                <label class="img-radio">
+                    <input type="radio" id="swimming" name="activity" value="swimming" {{ 'checked' if activity.activity == 'swimming' }}>
+                    <img class="icon-resize" src="/static/images/swimming.png" alt="Swimming">
+                    Swimming
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="yoga" name="activity" value="yoga" {{ 'checked' if activity.activity == 'yoga' }}>
+                    <img class="icon-resize" src="/static/images/Yoga.png" alt="Yoga/Meditation">
+                    Yoga/Meditation
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="running" name="activity" value="running" {{ 'checked' if activity.activity == 'running' }}>
+                    <img class="icon-resize" src="/static/images/running.png" alt="Running">
+                    Running/Walking
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="sports" name="activity" value="sports" {{ 'checked' if activity.activity == 'sports' }}>
+                    <img class="icon-resize" src="/static/images/sports.png" alt="Sports">
+                    Sports
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="athletics" name="activity" value="athletics" {{ 'checked' if activity.activity == 'athletics' }}>
+                    <img class="icon-resize" src="/static/images/athletics.png" alt="Athletics/Gymnastics">
+                    Athletics/Gymnastics
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="boating" name="activity" value="boating" {{ 'checked' if activity.activity == 'boating' }}>
+                    <img class="icon-resize" src="/static/images/boating.png" alt="Boating">
+                    Boating
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="horse-riding" name="activity" value="horse-riding" {{ 'checked' if activity.activity == 'horse-riding' }}>
+                    <img class="icon-resize" src="/static/images/horse-riding.png" alt="Horse Riding">
+                    Horse Riding
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="ski" name="activity" value="ski" {{ 'checked' if activity.activity == 'ski' }}>
+                    <img class="icon-resize" src="/static/images/ski.png" alt="Skiing">
+                    Skiing
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="gym-activities" name="activity" value="gym-activities" {{ 'checked' if activity.activity == 'gym-activities' }}>
+                    <img class="icon-resize" src="/static/images/gym-activities.png" alt="Gym Activities">
+                    Gym Activities
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="martial-arts" name="activity" value="martial-arts" {{ 'checked' if activity.activity == 'martial-arts' }}>
+                    <img class="icon-resize" src="/static/images/martial-arts.png" alt="Martial Arts">
+                    Martial Arts
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="outside" name="activity" value="outside" {{ 'checked' if activity.activity == 'outside' }}>
+                    <img class="icon-resize" src="/static/images/outside.png" alt="Outside">
+                    Outside Activities
+                </label>
+            </div>
+
+            <button type="submit" id="submit" class="button purple-button margin-button">Save</button>
+            
+        </form>
+    </article>
+
+    <aside>
+        <img src="/static/images/add_activity.png", width="100%">
+    </aside>
+
+{% endblock %}

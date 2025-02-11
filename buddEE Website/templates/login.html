@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+
+    <article>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <h1>Login: </h1>
+
+        <form action="/login" method="POST">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username" placeholder="eg. Buttons01" required><br>
+
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" placeholder="eg. buddies123" required><br>
+
+            <button type="submit" id="submit" class="button purple-button margin-top-bottom">Login</button>    
+        </form>
+    </article>
+
+    <aside>
+        <img src="/static/images/log_in.png", width="100%">
+    </aside>
+
+{% endblock %}

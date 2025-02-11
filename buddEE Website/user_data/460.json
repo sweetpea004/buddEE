@@ -1,0 +1,108 @@
+{
+    "pets": [
+        {
+            "id": 1,
+            "name": "snaeb",
+            "personality": "Confident",
+            "time": 750,
+            "points": 0.12,
+            "relationship": "Closely Acquainted",
+            "species": "cat",
+            "emotion": "neutral",
+            "birthday": "2022-05-25"
+        },
+        {
+            "id": 2,
+            "name": "Tiny",
+            "personality": "Confident",
+            "time": 750,
+            "points": 0.12,
+            "relationship": "Closely Acquainted",
+            "species": "frog",
+            "emotion": "neutral",
+            "birthday": "2022-06-08"
+        }
+    ],
+    "activities": [
+        {
+            "id": 5,
+            "date": "2022-06-04",
+            "time": 60,
+            "activity": "horse-riding",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        },
+        {
+            "id": 306,
+            "date": "2022-06-05",
+            "time": 120,
+            "activity": "outside",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        },
+        {
+            "id": 757,
+            "date": "2022-06-06",
+            "time": 60,
+            "activity": "running",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        },
+        {
+            "id": 752,
+            "date": "2022-06-08",
+            "time": 30,
+            "activity": "running",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        },
+        {
+            "id": 877,
+            "date": "2022-06-10",
+            "time": 105,
+            "activity": "outside",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        },
+        {
+            "id": 846,
+            "date": "2022-06-11",
+            "time": 60,
+            "activity": "horse-riding",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        },
+        {
+            "id": 34,
+            "date": "2022-06-12",
+            "time": 165,
+            "activity": "outside",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        },
+        {
+            "id": 307,
+            "date": "2022-06-13",
+            "time": 150,
+            "activity": "running",
+            "pets_taken": [
+                "snaeb",
+                "Tiny"
+            ]
+        }
+    ]
+}

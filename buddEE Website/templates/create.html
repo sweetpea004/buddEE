@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Create buddEE{% endblock %}
+{% block javascript %}<script src="/static/script/create.js" defer></script>{% endblock %}
+
+{% block content %}
+
+    <article>
+        <h1>Create your buddEE!</h1>
+        <p>Keep in mind, you are limited to 2 pets.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/create" method="POST">
+            <label for="pet-name">Name:</label>
+            <input type="text" name="pet-name" id="pet-name" placeholder="eg. Precious" max="20" required>
+            <!-- error message -->
+            <small class="hidden error" id="pet-name-error-text">Please enter a name for your BuddEE.</small>
+
+
+            <p>Pet Species:</p>
+            <!-- error message -->
+            <small class="hidden error" id="species-error-text">Please pick the species of your new BuddEE.</small>
+            <div id="choose-species">
+                <label class="img-radio">
+                    <input type="radio" id="dog" name="species" value="dog">
+                    <img src="/static/images/dog.png" alt="Dog" class="icon-resize">
+                </label>
+                
+                <label class="img-radio">
+                    <input type="radio" id="cat" name="species" value="cat">
+                    <img src="/static/images/cat.png" alt="Cat" class="icon-resize">
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="bird" name="species" value="bird">
+                    <img src="/static/images/bird.png" alt="Bird" class="icon-resize">
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="bunny" name="species" value="bunny">
+                    <img src="/static/images/bunny.png" alt="Turtle" class="icon-resize">
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="turtle" name="species" value="turtle">
+                    <img src="/static/images/turtle.png" alt="Turtle" class="icon-resize">
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="frog" name="species" value="frog">
+                    <img src="/static/images/frog.png" alt="Frog" class="icon-resize">
+                </label>
+            </div>
+
+            <button type="submit" id="submit" class="button purple-button">Create!</button>
+            
+        </form>
+    </article>
+
+    <aside>
+        <img src="/static/images/create_pet.png", width="100%">
+    </aside>
+
+{% endblock %}

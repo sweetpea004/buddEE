@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}Add Activity{% endblock %}
+{% block javascript %}<script src="/static/script/activity.js" defer></script>{% endblock %}
+
+{% block content %}
+
+    <article>
+        <h1>Add Activity:</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/addactivity" method="POST">
+            <label for="date">Date:</label>
+            <!-- error message -->
+            <input type="date" name="date" id="date" required><br>
+            <small class="hidden error" id="date-error-text">Please enter a date.</small>
+
+            <p>Time:</p>
+            <div class="time-container">                
+                <label class="margin-left" for="hours">Hours: </label>
+                <input type="number" name="hours" id="hours" min="0" value="0" required>
+                <label class="margin-left" for="minutes">Minutes: </label>
+                <input type="number" name="minutes" id="minutes" min="0" max="59" value="0" required>
+            </div>
+            <!-- error message -->
+            <small class="hidden error" id="time-zero-error-text">Cannot submit an activity with zero hours and minutes.</small><br>
+            <small class="hidden error" id="time-error-text">Please enter a time period for both slots - enter zero if not appliable.</small><br>
+
+            <p>Type of Activity:</p>
+            <!-- error message -->
+            <small class="hidden error" id="activity-error-text">Please pick a relevant activity.</small>
+            <div id="choose-activity">
+                <label class="img-radio">
+                    <input type="radio" id="biking" name="activity" value="biking">
+                    <img class="icon-resize" src="/static/images/biking.png" alt="Biking">
+                    Biking
+                </label>
+                
+                <label class="img-radio">
+                    <input type="radio" id="swimming" name="activity" value="swimming">
+                    <img class="icon-resize" src="/static/images/swimming.png" alt="Swimming">
+                    Swimming
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="yoga" name="activity" value="yoga">
+                    <img class="icon-resize" src="/static/images/Yoga.png" alt="Yoga/Meditation">
+                    Yoga/Meditation
+                </label class="img-radio">
+
+                <label class="img-radio">
+                    <input type="radio" id="running" name="activity" value="running">
+                    <img class="icon-resize" src="/static/images/running.png" alt="Running">
+                    Running/Walking
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="sports" name="activity" value="sports">
+                    <img class="icon-resize" src="/static/images/sports.png" alt="Sports">
+                    Sports
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="athletics" name="activity" value="athletics">
+                    <img class="icon-resize" src="/static/images/athletics.png" alt="Athletics/Gymnastics">
+                    Athletics/Gymnastics
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="boating" name="activity" value="boating">
+                    <img class="icon-resize" src="/static/images/boating.png" alt="Boating">
+                    Boating
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="horse-riding" name="activity" value="horse-riding">
+                    <img class="icon-resize" src="/static/images/horse-riding.png" alt="Horse Riding">
+                    Horse Riding
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="ski" name="activity" value="ski">
+                    <img class="icon-resize" src="/static/images/ski.png" alt="Skiing">
+                    Skiing
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="gym-activities" name="activity" value="gym-activities">
+                    <img class="icon-resize" src="/static/images/gym-activities.png" alt="Gym Activities">
+                    Gym Activities
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="martial-arts" name="activity" value="martial-arts">
+                    <img class="icon-resize" src="/static/images/martial-arts.png" alt="Martial Arts">
+                    Martial Arts
+                </label>
+
+                <label class="img-radio">
+                    <input type="radio" id="outside" name="activity" value="outside">
+                    <img class="icon-resize" src="/static/images/outside.png" alt="Outside">
+                    Outside Activities
+                </label>
+            </div>
+
+            <button type="submit" id="submit" class="button purple-button margin-button">Submit</button>
+            
+        </form>
+    </article>
+
+    <aside>
+        <img src="/static/images/add_activity.png", width="100%">
+    </aside>
+
+{% endblock %}

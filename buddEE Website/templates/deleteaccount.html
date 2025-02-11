@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Delete Account{% endblock %}
+
+{% block content %}
+
+<form method="post" action="/deleteaccount" class="center span-columns">
+    <!-- changed due to sample demo for hsc major project showcase -->
+    <!-- <p class="center">You are about to permanently delete your account, are you sure you want to do this <span class="bold">{{ user.username }}?</span></p>
+    <p class="center">This action cannot be undone <span>and your pets will be put up for adoption</span>.</p>
+    <a href="/account" class="purple-button">Cancel</a>
+    <button type="submit" class="green-button bold">Confirm delete</button><br> -->
+
+    <p class="center">Your account cannot be deleted during this hsc major project demo. Please go back</p>
+    <a href="/dashboard" class="purple-button">Go back</a><br><br><br>
+    <img class="fill-space-img" width="20%" src="/static/images/delete_account.png">
+</form>
+
+{% endblock %}

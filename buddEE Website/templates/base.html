@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="shortcut icon" type="image" href="/static/images/buddEE-logo.png">
+    {% block javascript %}{% endblock %}
+    <title>{% block title %}buddEE{% endblock %}</title>
+</head>
+
+<body>
+    <div class="content-box">
+        <header>
+            <a href="/home"><img src="/static/images/buddEE-logo.png" width="90"></a>
+            {% block nav %}
+                {% if session['user'] %}
+                    <nav>
+                        <a href="/dashboard" {{ 'class=active' if '/dashboard' in request.path }}>DASHBOARD</a>
+                        <a href="/activity" {{ 'class=active' if '/activity' in request.path }}>ACTIVITY</a>
+                        <a href="/create" {{ 'class=active' if '/create' in request.path }}>CREATE BUDDEE</a>
+                        <a href="/adoption" {{ 'class=active' if '/adoption' in request.path }}>ADOPTION</a>
+                        <a href="/help" {{ 'class=active' if '/help' in request.path }}>HELP</a>
+                    </nav>
+
+                    <nav>
+                        <a href="/logout" class="purple-nav {{ 'active' if '/logout' in request.path }}">LOG OUT</a>
+                        <a href="/account" class="green-button {{ 'active' if '/account' in request.path }}">ACCOUNT</a>
+                    </nav>
+                {% else %}
+                    <nav>
+                        <a href="/home" {{ 'class=active' if '/home' in request.path }}>HOME</a>
+                        <a href="/help" {{ 'class=active' if '/help' in request.path }}>HELP</a>
+                        <a href="/about" {{ 'class=active' if '/about' in request.path }}>ABOUT</a>
+                    </nav>
+
+                    <nav>
+                        <a href="/login" class="purple-nav {{ 'active' if '/login' in request.path }}">LOG IN</a>
+                        <a href="/signup" class="green-button {{ 'active' if '/signup' in request.path }}">SIGN UP</a>
+                    </nav>
+                {% endif %}
+            {% endblock %}
+            </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+
+
+</html>

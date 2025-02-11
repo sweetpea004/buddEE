@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Adoption{% endblock %}
+
+{% block content %}
+
+    <article>
+        <h1>Adoption:</h1>
+        <p>BuddEE's that previous users have owned are now up for adoption! Remember, a pet is with you for life!</p><br>
+        
+        <!-- add search bar if possible -->
+        <!-- <input type="text" class="search" placeholder="Search " id="adopt-searchbar">
+        <p id="not-found" class="hidden error"></p> -->
+    </article>
+
+    {% if pets_adoption %}
+        <table class="span-columns" id="adopt-table">
+            <thead>
+                <tr>
+                    <th class="center">Name</th>
+                    <th> </th>
+                    <th class="center">Personality</th>
+                    <th class="center">Birthday</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for buddEE in pets_adoption|reverse %}
+                <tr>
+                    <td class="center">{{ buddEE.name }}</td>
+                    <td class="center"><img src="/static/{{buddEE.species}}/{{buddEE.species}}_happy.png"></td>
+                    <td class="center">{{ buddEE.personality }}</td>
+                    <td class="center">{{ buddEE.birthday }}</td>
+                    <td class="center"><a href="/confirmadopt?id={{  buddEE.id }}" class="purple-button bold">Adopt Me!</a></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    {% else %}
+        <p class="bold">There are currently no BuddEE's up for adoption!</p><br>
+        <img class="fill-space-img margin-top-bottom" src="/static/images/help_page.png">
+
+    {% endif %}
+    
+
+{% endblock %}

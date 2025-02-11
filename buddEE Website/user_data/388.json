@@ -1,0 +1,27 @@
+{
+    "pets": [
+        {
+            "id": 1,
+            "name": "Gary",
+            "personality": "Sweet",
+            "time": 0,
+            "points": 0.0,
+            "relationship": "Acquainted",
+            "species": "turtle",
+            "emotion": "shy",
+            "birthday": "2022-06-14"
+        },
+        {
+            "id": 2,
+            "name": "Beans",
+            "personality": "Independent",
+            "time": 0,
+            "points": 0,
+            "relationship": "Acquainted",
+            "species": "cat",
+            "emotion": "sad",
+            "birthday": "2022-04-25"
+        }
+    ],
+    "activities": []
+}
